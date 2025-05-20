@@ -1,0 +1,22 @@
+# Core dependencies
+python-dotenv
+streamlit
+
+# LangChain and LangChain community modules
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+
+# Supabase client
+supabase
+
+# Langfuse for observability
+langfuse
+
+# Document parsing dependencies (for PDF/Word loaders)
+unstructured
+pdfminer.six
+python-docx
+
