@@ -60,7 +60,7 @@ prompt = hub.pull("hwchase17/structured-chat-agent")
 @tool(response_format="content_and_artifact")
 def retrieve(query: str):
     """Retrieve information related to a query."""
-    retrieved_docs = vector_store.similarity_search(query, k=2)
+    retrieved_docs = vector_store.similarity_search(query, k=4)
     serialized = "\n\n".join(
         (f"Source: {doc.metadata}\n" f"Content: {doc.page_content}")
         for doc in retrieved_docs
@@ -108,7 +108,8 @@ if user_question:
 
 
     # invoking the agent
-    result = agent_executor.invoke({"input": user_question, "chat_history":st.session_state.messages},config={"callbacks": [langfuse_handler]})
+    # Only pass the last 5 messages as chat history (recent history)
+    result = agent_executor.invoke({"input": user_question, "chat_history":st.session_state.messages[-5:]},config={"callbacks": [langfuse_handler]})
 
     ai_message = result["output"]
 
