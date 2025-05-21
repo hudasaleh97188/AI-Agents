@@ -46,15 +46,17 @@ vector_store = SupabaseVectorStore(
  
 # initiating llm
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-2.0-flash",
     temperature=0,
     api_key=GOOGLE_API_KEY
 )
 
 # pulling prompt from hub
-prompt = hub.pull("hwchase17/structured-chat-agent")
 
-
+prompt_base = hub.pull("hwchase17/structured-chat-agent") 
+# the doc contains topics that llm knows which make it answer it from its knowlage 
+# the additional promot is added to force the agent to use the tool even if it knows the answer (which can be removed)
+prompt = prompt_base +""" Make sure to use the tool to answer the question if possible. If the question cannot be answered using the tool you may answer it directly"""
 
 # creating the retriever tool
 @tool(response_format="content_and_artifact")
@@ -74,7 +76,7 @@ tools = [retrieve]
 agent = create_structured_chat_agent(llm=llm, tools=tools, prompt=prompt)
 
 # create the agent executor
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
 
 # initiating streamlit app
 st.set_page_config(page_title="Chatbot - Agentic RAG", page_icon="🚀")
