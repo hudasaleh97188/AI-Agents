@@ -129,3 +129,16 @@ streamlit run rag_streamlit.py
 ```
 ### 📈 Optional: Enable Langfuse Tracing
 Langfuse provides observability into your LangChain agents. Once you set your Langfuse keys in .env, you'll see traces of your agent runs, tool calls, and LLM completions.
+
+## Citation
+This project was inspired by the tutorial:  
+**Build an Agentic RAG Chatbot with LangChain and Supabase**  
+YouTube: [https://www.youtube.com/watch?v=3ZDeqTIXBPM](https://www.youtube.com/watch?v=3ZDeqTIXBPM)
+
+### AI Assistance
+
+This project utilized AI tools for development support, including:
+- **ChatGPT** by OpenAI – Used for debugging assistance, code explanations, and drafting the README file.
+  
+All AI-generated content was reviewed, validated, and refined by the author.
+
