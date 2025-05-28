@@ -1,10 +1,9 @@
 # AI-Agents
 
-**AI-Agents** is a collection of my use cases demonstrating the application of agentic frameworks in various domains. The project leverages Python and Streamlit to create interactive applications that showcase the capabilities of AI agents in different scenarios.
+**AI-Agents** is a collection of use cases demonstrating the application of agentic frameworks across various domains. The project leverages libraries such as CrewAI, LangChain, Pydantic AI, Streamlit, and others to create interactive applications that showcase the capabilities of AI agents in different scenarios.
 
 
 ## 📁 Use Cases Overview
-
 
 **DeepCallAnalysis:** Analyzes call data to extract meaningful insights using AI agents.
 **Health:** Applies agentic frameworks to health-related data for predictive analysis and recommendations.
