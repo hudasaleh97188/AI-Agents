@@ -30,13 +30,14 @@ A personalized health assistant powered by AI agents (using CrewAI) designed to 
 
 
 ## 📁 Project Structure (Example)
+```yaml
 eunoia-ai-health-assistant/
 ├── crew.py # <-- FastAPI app, CrewAI agents, tasks, crews setup
 ├── app.py # <-- Streamlit frontend application
 ├── schemas.py # <-- Pydantic models for input/output data
 ├── requirements.txt # <-- Python dependencies
 └── README.md # <-- This file
-
+```
 
 ## 🚀 Getting Started
 
